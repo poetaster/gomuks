@@ -103,21 +103,24 @@ func NewHelpModal(parent *MainView) *HelpModal {
 	return hm
 }
 
-const keysText = `Note: Ctrl and Alt are interchangeable in most keybindings, but the other one may not work depending on your terminal emulator.
+const keysText = `Note: Ctrl and Alt are interchangeable in most keybindings, 
+but the other one may not work depending on your terminal emulator.
 
 SHORTCUTS:
 Ctrl+↑, Ctrl+↓ - Switch rooms
 PgUp, PgDown   - Scroll chat (page)
-Ctrl+K         - Jump to room, type part of a room's name, then TAB and ENTER to navigate and select room
+Ctrl+K         - Jump to room, type part of a room's name, then TAB and ENTER
 Ctrl+L         - Plaintext mode
 Alt+Enter      - Newline
-Tab            - Autocompletion (emojis, usernames, room aliases and commands)
+Tab            - Autocomple (emojis, usernames, room aliases and commands)
 
 EDITING MESSAGES:
-↑ and ↓ can be used at the start and end of the input area to jump to edit the previous or next message respectively.
+↑ and ↓ can be used at the start and end of the input area 
+to jump to edit the previous or next message respectively.
 
 SELECTING MESSAGES:
-After using commands that require selecting messages (e.g. /reply and /redact), you can move the selection with ↑ and ↓ confirm with ENTER
+After using commands that require selecting messages 
+(e.g. /reply and /redact), you can move the selection with ↑ and ↓ confirm with ENTER
 
 MOUSE:
 Click               - select message (for commands such as /reply that act on a message)
@@ -130,7 +133,7 @@ func NewKeysModal(parent *MainView) *HelpModal {
 	text := mauview.NewTextView().
 		SetText(keysText).
 		SetScrollable(true).
-		SetWrap(false).
+		SetWrap(true).
 		SetTextColor(tcell.ColorDefault)
 
 	box := mauview.NewBox(text).
